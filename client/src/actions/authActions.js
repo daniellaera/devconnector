@@ -40,7 +40,7 @@ export const registerUser = (userData, history) => dispatch => {
     }));
  };
 
-// set logged in user
+// Set logged in user
 export const setCurrentUser = (decoded) => {
   return {
     type: SET_CURRENT_USER,
