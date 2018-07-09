@@ -11,7 +11,7 @@ const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
 // Load User model
- const User = require('../../models/User')
+const User = require('../../models/User')
 
 //@route    GET api/users/test
 //@desc     Tests users route
@@ -115,10 +115,7 @@ router.post('/login', (req, res) => {
 //@desc     Return current user
 //@access   Private
 
-router.get('/current',
-    passport.authenticate('jwt',
-    { session: false }),
-    (req, res) => {
+router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
         res.json({
             id: req.user.id,
             name: req.user.name,
