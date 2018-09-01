@@ -1,18 +1,17 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class ProfileGithub extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       clientId: '0b3ee496731b63fe7772',
       clientSecret: '8a538c0d313959f2a81dab3ca9149b6e93aebb8c',
       count: 5,
       sort: 'created: asc',
       repos: []
-    }
+    };
   }
 
   componentDidMount() {
@@ -20,7 +19,7 @@ class ProfileGithub extends Component {
     const { count, sort, clientId, clientSecret } = this.state;
 
     fetch(
-      `https://api.github.com/${username}/repos?per_page=${count}&sort=${sort}&client_id=${clientId}&client_secret=${clientSecret}`
+      `https://api.github.com/users/${username}/repos?per_page=${count}&sort=${sort}&client_id=${clientId}&client_secret=${clientSecret}`
     )
       .then(res => res.json())
       .then(data => {
@@ -58,15 +57,14 @@ class ProfileGithub extends Component {
           </div>
         </div>
       </div>
-    ))
-
+    ));
     return (
       <div ref="myRef">
         <hr />
         <h3 className="mb-4">Latest Github Repos</h3>
         {repoItems}
       </div>
-    )
+    );
   }
 }
 
