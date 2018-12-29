@@ -16,7 +16,12 @@ const middleware = [thunk];
   )
 ); */
 
-const whichCompose = () => {
+const store = redux.createStore(rootReducer, initialState, redux.compose(
+  redux.applyMiddleware(),
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+));
+
+/* const whichCompose = () => {
   if (window.navigator.userAgent.includes("Chrome")) {
     compose(
       applyMiddleware(...middleware),
@@ -29,6 +34,6 @@ const whichCompose = () => {
   }
 };
 
-const store = createStore(rootReducer, {}, whichCompose());
+const store = createStore(rootReducer, {}, whichCompose()); */
 
 export default store;
