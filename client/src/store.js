@@ -16,6 +16,14 @@ const store = createStore(
   )
 );
 
+const store = configureStore({
+  reducer,
+  middleware,
+  devTools: NODE_ENV !== 'production',
+  preloadedState,
+  enhancers: [reduxBatch]
+})
+
 /* const store = redux.createStore(rootReducer, initialState, compose(
   applyMiddleware(...middleware),
   window.devToolsExtension ? window.devToolsExtension() : f => f
