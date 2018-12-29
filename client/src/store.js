@@ -29,6 +29,6 @@ const whichCompose = () => {
   }
 };
 
-const store = createStore(reducers, {}, whichCompose());
+const store = createStore(rootReducer, {}, whichCompose());
 
 export default store;
