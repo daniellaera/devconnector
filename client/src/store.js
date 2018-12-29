@@ -16,8 +16,8 @@ const middleware = [thunk];
   )
 ); */
 
-const store = redux.createStore(rootReducer, initialState, redux.compose(
-  redux.applyMiddleware(),
+const store = redux.createStore(rootReducer, initialState, compose(
+  applyMiddleware(...middleware),
   window.devToolsExtension ? window.devToolsExtension() : f => f
 ));
 
