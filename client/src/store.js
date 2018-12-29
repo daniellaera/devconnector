@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
+import reducers from './reducers';
 
 const initialState = {};
 
@@ -28,6 +29,6 @@ const whichCompose = () => {
   }
 };
 
-const store = createStore(rootReducer, {}, whichCompose());
+const store = createStore(reducers, {}, whichCompose());
 
 export default store;
