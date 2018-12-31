@@ -62,7 +62,7 @@ class Login extends Component {
               <p className="lead text-center">Sign in to your DevConnector account</p>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
-                  placeholder="Email Address"
+                  placeholder="Email"
                   name="email"
                   type="email"
                   value={this.state.email}
@@ -81,7 +81,8 @@ class Login extends Component {
                 
                 <input 
                   type="submit" 
-                  className="btn btn-info btn-block mt-4" 
+                  className="btn btn-info btn-block mt-4"
+                  value="Login"
                 />
               </form>
             </div>
