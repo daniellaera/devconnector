@@ -15,13 +15,17 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 // DB Config
-const db = require('./config/keys').mongoURI;
+//const db = require('./config/keys').mongoURI;
+
+// option 2 for connection
+const connectDB = require('./config/db');
+connectDB();
 
 // Connect to MongoDB
-mongoose
+/* mongoose
     .connect(db)
     .then(() => console.log('MongoDB connected'))
-    .catch(err => console.log(err));
+    .catch(err => console.log(err)); */
 
 // Passport Middleware
 app.use(passport.initialize());
@@ -44,6 +48,6 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-const port = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

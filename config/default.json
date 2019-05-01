@@ -1,0 +1,3 @@
+{
+    "mongoURI": "mongodb+srv://daniel:daniel123@dev-connector-gzpub.mongodb.net/test?retryWrites=true"
+}
